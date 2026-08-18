@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: queuelab-api
+    env: dotnet
+    buildCommand: dotnet publish QueueLab.Api/QueueLab.Api.csproj -c Release -o out
+    startCommand: dotnet out/QueueLab.Api.dll
+    envVars:
+      - key: CORS_ORIGINS
+        sync: false
