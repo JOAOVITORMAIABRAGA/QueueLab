@@ -16,3 +16,8 @@ dotnet run --project QueueLab.Api
 Swagger: `/swagger`.
 
 A porta HTTP local é `54873`. Configure `CORS_ORIGINS` no ambiente para produção.
+
+
+## Render
+
+This API is packaged with `Dockerfile` for Render. The container listens on `0.0.0.0:10000`; Render forwards its public HTTP traffic to that port. Configure `CORS_ORIGINS` with the Vercel frontend origin.
