@@ -1,9 +1,11 @@
 services:
   - type: web
     name: queuelab-api
-    env: dotnet
-    buildCommand: dotnet publish QueueLab.Api/QueueLab.Api.csproj -c Release -o out
-    startCommand: dotnet out/QueueLab.Api.dll
+    runtime: docker
+    dockerfilePath: Backend/Dockerfile
+    plan: free
     envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
       - key: CORS_ORIGINS
         sync: false
